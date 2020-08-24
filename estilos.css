@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e9ecf4;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+/* PASO DOS */
+
+.contenedor {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+
+  /* PASO TRES css-grid*/
+
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+}
+
+/* PASO 4 color*/
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* PASO 5 header*/
+.contenedor .header {
+  background: #12203e;
+  color: #fff;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.contenedor .contenido {
+  grid-column: span 2;
+}
+
+/* PASO 6 sidebar  de  2 filas y texto centrado */
+.contenedor .sidebar {
+  grid-column: 3 / 4;
+  background: #faa43d;
+  text-align: center;
+
+  /* PASO 7 flexbox para acomodar elementos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: span 2;
+
+  /*   Resp ancla para que no quede muy pequeño al contraerse */
+  min-height: 100px;
+}
+
+/* PASO 8 flexbox para acomodar elementos WIDGET*/
+.contenedor .widget-1,
+.contenedor .widget-2 {
+  background: #55a8fd;
+  color: #fff;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PASO 9 flexbox para acomodar elementos FOOTER*/
+
+.contenedor .footer {
+  background: #12203e;
+  color: #fff;
+  grid-column: span 3;
+}
+
+/* PASO 10 responsive query*/
+@media screen and (max-width: 768px) {
+  .contenedor .contenido {
+    grid-column: 1 /-1;
+  }
+
+  .contenedor .sidebar {
+    grid-column: 1 /-1;
+  }
+}
+
+.contenedor .widget-1 {
+  grid-column: span 2;
+}
+
+/*    
+ body {
+    background: black;
+  }
+
+  
+  */
